@@ -1,4 +1,4 @@
-Here is the bug0, bug1 and bug2 motion planning algorithms that implementation on Webots simulation environment. Pioneer robot is used that equipped with following sensors:
+Here is the bug0, bug1 and bug2 motion planning algorithms that implemented in Webots simulation environment. Pioneer robot is used that equipped with following sensors:
 
 * 2x GPS
 * 7x infra-red front side sensor
