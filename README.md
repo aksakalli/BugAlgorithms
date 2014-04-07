@@ -8,13 +8,13 @@ All of the three algorithms were implemented in three individual projects with l
 
 Kinect detects the obstacle and the robot starts to follow the obstacle. During following, infra-red sensors in the each side control the distance through the obstacle.
 
-![bug motion planning angel](https://raw.github.com/aksakalli/BugAlgorithms/assets/1.jpg)
+![bug motion planning angel](https://raw.githubusercontent.com/aksakalli/BugAlgorithms/master/assets/1.jpg)
 
 To determine the position and angle of the target two GPSs are used. Back GPS to center GPS angle is defined as "currentAngle", back GPS to target is defined as "targetAngle".
 
-When the robot in "GO_TO_TARGET" mode, it tries to reduce the difference of two angles. Right wheel speed is increased and left wheel speed is decreased when the target angle is bigger than current angle opposite way is done for smaller situation. This progress continues up to threshold value. If the difference of two angles is smaller than that value, both wheels are set to normal speed.
+When the robot in "GO_TO_TARGET" state, it tries to reduce the difference of two angles. Right wheel speed is increased and left wheel speed is decreased when the target angle is bigger than current angle opposite way is done for smaller situation. This progress continues up to threshold value. If the difference of two angles is smaller than that value, both wheels are set to normal speed.
 
-![increased angel](https://raw.github.com/aksakalli/BugAlgorithms/assets/2.jpg)
+![increased angel](https://raw.githubusercontent.com/aksakalli/BugAlgorithms/master/assets/2.jpg)
 
 ##Bug0 Algorithm
 - Head toward goal
@@ -33,11 +33,11 @@ It was not defined as a monotonically right or left turning algorithm. In this a
 
 [![Bug 0 youtube video](http://img.youtube.com/vi/iJWULA_gIy8/1.jpg) Watch Youtube video](http://www.youtube.com/watch?v=iJWULA_gIy8)
 
-###Robot has two modes
+###Robot has two states
 
 **GO_TO_TARGET :** Robot tries to go to target point with calculating the angles. If it detects an obstacle stores the initial minimum distance values that coordinate point, time and distance to target.
 
-**FOLLOW_OBSTACLE :** Robot follows the obstacle and stores minimum distance point for its route. When it is at the closed point for a second time, it switches to "GO_TO_TARGET" mode. How can the robot understand that this is first or second time that it passes through the minimum distance point? Robot also saves the time period of reaching the minimum point. If there is more than three second differences between reaching the short distance point, it must be second time. Otherwise, robot always switches to "GO_TO_TARGET" mode because it reaches the smallest point for every step during coming closer to target.
+**FOLLOW_OBSTACLE :** Robot follows the obstacle and stores minimum distance point for its route. When it is at the closed point for a second time, it switches to "GO_TO_TARGET" state. How can the robot understand that this is first or second time that it passes through the minimum distance point? Robot also saves the time period of reaching the minimum point. If there is more than three second differences between reaching the short distance point, it must be second time. Otherwise, robot always switches to "GO_TO_TARGET" state because it reaches the smallest point for every step during coming closer to target.
 
 ##Bug2 Algorithm
  
@@ -47,8 +47,8 @@ It was not defined as a monotonically right or left turning algorithm. In this a
 
 [![Bug 0 youtube video](http://img.youtube.com/vi/Z5-TBsKPCF0/1.jpg) Watch Youtube video](http://www.youtube.com/watch?v=Z5-TBsKPCF0)
 
-The robot calculates its initial angle to target. In "GO_TO_TARGET" mode, it tries to reach the target. If it detects an obstacle, it switches to "TURN_RIGHT_FOLLOW" or "TURN_LEFT_FOLLOW" mode. Actually they are making the same things accept turning direction. In following mode robot follows the obstacle until reaching the same angle that in the initial step.
+The robot calculates its initial angle to target. In "GO_TO_TARGET" state, it tries to reach the target. If it detects an obstacle, it switches to "TURN_RIGHT_FOLLOW" or "TURN_LEFT_FOLLOW" state. Actually they are making the same things accept turning direction. In following state robot follows the obstacle until reaching the same angle that in the initial step.
 
-![bug2 motion planning path](https://raw.github.com/aksakalli/BugAlgorithms/assets/3.jpg)
+![bug2 motion planning path](https://raw.githubusercontent.com/aksakalli/BugAlgorithms/master/assets/3.jpg)
 
 Explanation of algorithms are taken from [here](http://www.cs.cmu.edu/~motionplanning/lecture/Chap2-Bug-Alg_howie.pdf)
